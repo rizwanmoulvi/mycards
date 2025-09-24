@@ -5,9 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   build: {
     outDir: "dist",
-    rollupOptions: {
-      external: ['buffer'],
-    },
+    // Remove buffer from external - we want it bundled
   },
   server: {
     open: true,
@@ -15,6 +13,9 @@ export default defineConfig({
   plugins: [
     react(),
   ],
+  define: {
+    global: 'globalThis',
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./frontend"),
@@ -25,6 +26,7 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
+    include: ['buffer', 'process', 'util'],
     esbuildOptions: {
       define: {
         global: 'globalThis',
