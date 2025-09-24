@@ -1,0 +1,11 @@
+[package]
+name = "virtual_card"
+version = "0.0.1"
+upgrade_policy = "compatible"
+
+[addresses]
+virtual_card = "0xa4ad32f3a9215c61bc69b26b859b9de9b997b3fd5bbd15fc735aa47e0d91aa87"
+aptos_framework = "0x1"
+
+[dependencies]
+AptosFramework = { git = "https://github.com/aptos-labs/aptos-core.git", subdir = "aptos-move/framework/aptos-framework", rev = "main" }
