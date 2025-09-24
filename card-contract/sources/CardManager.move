@@ -102,6 +102,34 @@ module virtual_card::CardManager {
       vector::length(&reg_ref.cards)
     }
 
+    /// Get card details by ID (returns id, owner, balance)
+    #[view]
+    public fun get_card_details(card_id: u64): (u64, address, u64) acquires Registry {
+      assert!(exists<Registry>(@virtual_card), 24);
+      let reg_ref = borrow_global<Registry>(@virtual_card);
+      let idx = index_of_card_immut(&reg_ref.cards, card_id);
+      let card_ref = vector::borrow(&reg_ref.cards, idx);
+      (card_ref.id, card_ref.owner, coin::value(&card_ref.vault))
+    }
+
+    /// Get all card IDs (for frontend to iterate through)
+    #[view]
+    public fun get_all_card_ids(): vector<u64> acquires Registry {
+      assert!(exists<Registry>(@virtual_card), 25);
+      let reg_ref = borrow_global<Registry>(@virtual_card);
+      let cards_length = vector::length(&reg_ref.cards);
+      let card_ids = vector::empty<u64>();
+      let i = 0;
+      
+      while (i < cards_length) {
+        let card_ref = vector::borrow(&reg_ref.cards, i);
+        vector::push_back(&mut card_ids, card_ref.id);
+        i = i + 1;
+      };
+      
+      card_ids
+    }
+
     /// Owner-only: withdraw APT from card back to owner's account
     public entry fun withdraw(owner_signer: &signer, card_id: u64, amount: u64) acquires Registry {
       let owner_addr = signer::address_of(owner_signer);
