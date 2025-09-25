@@ -121,69 +121,6 @@ export class GoogleWalletService {
       }
     };
 
-    // Create the class object (this would normally be done server-side)
-    // const classObject = {
-    //   id: classId,
-    //   issuerName: "Virtual APT Cards",
-    //   reviewStatus: "UNDER_REVIEW",
-    //   logo: {
-    //     sourceUri: {
-    //       uri: "https://mycards.rizzmo.site/aptos.png"
-    //     }
-    //   },
-    //   hexBackgroundColor: "#1976D2",
-    //   origins: [
-    //     {
-    //       origin: this.websiteUrl
-    //     }
-    //   ],
-    //   classTemplateInfo: {
-    //     cardTemplateOverride: {
-    //       cardRowTemplateInfos: [
-    //         {
-    //           twoItems: {
-    //             startItem: {
-    //               firstValue: {
-    //                 fields: [
-    //                   {
-    //                     fieldPath: "object.textModulesData['card_id']"
-    //                   }
-    //                 ]
-    //               }
-    //             },
-    //             endItem: {
-    //               firstValue: {
-    //                 fields: [
-    //                   {
-    //                     fieldPath: "object.textModulesData['balance']"
-    //                   }
-    //                 ]
-    //               }
-    //             }
-    //           }
-    //         },
-    //         {
-    //           oneItem: {
-    //             item: {
-    //               firstValue: {
-    //                 fields: [
-    //                   {
-    //                     fieldPath: "object.textModulesData['owner']"
-    //                   }
-    //                 ]
-    //               }
-    //             }
-    //           }
-    //         }
-    //       ]
-    //     }
-    //   }
-    // };
-
-    // For production, you would need to:
-    // 1. Create the class on Google Wallet API server-side
-    // 2. Generate a signed JWT token server-side  
-    // 3. Return the proper save URL
     
     // For demo purposes, create a simplified payload
     const payload = {

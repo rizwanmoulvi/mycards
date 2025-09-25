@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import { Wallet, Copy, Loader2 } from 'lucide-react';
 import { useToast } from './ui/use-toast';
+import { getApiUrl, API_CONFIG } from '../config/api';
 
 interface GoogleWalletButtonProps {
   card: {
@@ -22,7 +23,7 @@ export function GoogleWalletButton({ card, variant = 'full', className = '' }: G
     setIsLoading(true);
     
     try {
-      const response = await fetch('http://localhost:3001/api/wallet/create-pass', {
+      const response = await fetch(getApiUrl(API_CONFIG.ENDPOINTS.CREATE_WALLET_PASS), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
