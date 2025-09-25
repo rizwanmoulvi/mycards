@@ -1,31 +1,87 @@
-My Cards
+# My Cards
 
-Programmable Virtual Crypto Cards
+### Programmable Virtual Crypto Cards on Aptos
 
-The platform is introducing a better way to interact with crypto. THe current accounts are used for only 3 purposes 
-1. Send funds
-2. receive funds
-3. Sign
-They also store crypto in a scattered way, they are monolithic on account for all purpose risking the assets, no way to make them work according to you.
+**My Cards** is building a smarter way to interact with crypto.  
 
-My Cards platfrom is providing a way where users can create cards (accounts) which are created with predeifend rules and instructions and permissions, that deceide how they behave and interacte. Rules range from setting the maximum balance, fixed amount of tokens per transaction, fixed number of transactions per day, subscriptions and more. Create asy many cards as you want just for 0.1 APT each. and store your assets in the card transfer from them, withdraw id needed. The platforms also provide analytics of all the things to make you take better decisions. On top of it our cards can be added to google wallet and then used to transact crypto by typing the device at terminals. THe next verison of system will have AI integrated to help users defien rules in natural languages or intent based.
+Today, wallets/accounts are monolithic — they are mainly used for:  
+1. Sending funds  
+2. Receiving funds  
+3. Signing transactions  
 
-How it works.
-1. user connects wallet and create a card by defining the rules.
-2. after the card is created the user add funds to it and use according to him and rules.
-3. also there are features to withdraw, transfer and more.
-4. can see all the cards in the dashboards for better access
-5. copy the link from the card and add it in your google wallet and access card from it.
+But this approach has **limitations**:  
+- Assets are stored in one large account, making them more exposed to risks.  
+- No way to control spending behavior or add programmable rules.  
+- No personalized management for different use cases (subscriptions, limits, budgets).  
 
-Technical architecture
-A smart contract is deployed on aptos testnet, that handle the card creation and functionalities. the frontend is integrated with smart contract and uses petra wallet fro doing actions. Adding cards to google wallet is handled by google wallets api.
+---
 
+## 🌟 What My Cards Solves
 
-links
-webiste: https://mycards.rizzmo.site/
-Module : https://explorer.aptoslabs.com/account/0xa4ad32f3a9215c61bc69b26b859b9de9b997b3fd5bbd15fc735aa47e0d91aa87/modules/view/CardManager/get_balance?network=testnet
-video : https://youtu.be/Qfddzt26-_E
-pitch-deck : https://www.canva.com/design/DAGz9fn9ahI/bTrN1np6l5zF_8TUvSGIwg/view?utm_content=DAGz9fn9ahI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h006b46fc56
+**My Cards** introduces a platform where users can create **virtual crypto cards (accounts)** with predefined **rules, instructions, and permissions** that decide how they behave and interact.  
 
-if you want to test the feature of adding card to google wallet please send and email to 'zeusprime1610@gmail.com' i will add you as tester so that you can use the feature
+### ✅ Features:
+- Create unlimited cards for just **0.1 APT each**.  
+- Store assets safely in separate cards.  
+- Define rules like:  
+  - Maximum balance allowed.  
+  - Fixed amount of tokens per transaction.  
+  - Daily transaction limits.  
+  - Subscription-style recurring payments.  
+- Deposit, transfer, and withdraw funds as needed.  
+- See all cards in one **dashboard with analytics** to make better financial decisions.  
+- Export cards to **Google Wallet** and use them for transactions by tapping your device at terminals.  
 
+💡 **Next version:** AI-powered natural language rules — define card behavior simply by describing it in plain English.
+
+---
+
+## 🔧 How It Works
+
+1. **Connect wallet** → user connects with Petra (or compatible Aptos wallet).  
+2. **Create a card** → define rules and deploy a card account on-chain.  
+3. **Fund the card** → deposit APT or USDC and start using it.  
+4. **Transact with rules** → send, withdraw, or transfer based on the card’s permissions.  
+5. **Track & manage** → view all cards and activity via the analytics dashboard.  
+6. **Add to Google Wallet** → copy the card link, add to Wallet, and tap to transact.  
+
+---
+
+## 🏗 Technical Architecture
+
+- **Smart Contract (Move)** deployed on **Aptos testnet**  
+  - Handles card creation, deposits, withdrawals, and transfers.  
+- **Frontend (React + Vite + TailwindCSS)**  
+  - Integrated with the smart contract.  
+  - Uses **Petra Wallet** for signing and actions.  
+- **Google Wallet Integration**  
+  - Cards can be added and used directly via Google Wallet’s API.  
+
+---
+
+## 🔗 Links
+
+- 🌐 **Website**: [https://mycards.rizzmo.site/](https://mycards.rizzmo.site/)  
+- 📜 **Module**: [CardManager on Aptos Explorer](https://explorer.aptoslabs.com/account/0xa4ad32f3a9215c61bc69b26b859b9de9b997b3fd5bbd15fc735aa47e0d91aa87/modules/view/CardManager/get_balance?network=testnet)  
+- 🎥 **Demo Video**: [YouTube Link](https://youtu.be/Qfddzt26-_E)  
+- 📑 **Pitch Deck**: [Canva Presentation](https://www.canva.com/design/DAGz9fn9ahI/bTrN1np6l5zF_8TUvSGIwg/view?utm_content=DAGz9fn9ahI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h006b46fc56)  
+
+---
+
+## 🧪 Google Wallet Testing
+
+If you’d like to test adding a card to Google Wallet, please email:  
+📧 **zeusprime1610@gmail.com**  
+
+I’ll add you as a tester so you can use the feature.
+
+---
+
+## 🚀 Future Roadmap
+
+- AI-powered natural language rule generation.  
+- Advanced analytics & budgeting features.  
+- Merchant integrations & recurring payment APIs.  
+- Multi-token support (beyond APT/USDC).  
+
+---
