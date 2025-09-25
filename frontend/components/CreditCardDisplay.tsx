@@ -3,6 +3,7 @@ import { Badge } from "./ui/badge";
 import { Copy, Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "./ui/use-toast";
+import { GoogleWalletButton } from "./GoogleWalletButton";
 
 interface CreditCardProps {
   id: number;
@@ -32,8 +33,10 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
     });
   };
 
+
+
   return (
-    <Card className={`w-80 h-48 relative overflow-hidden ${isOwnCard ? 'bg-gradient-to-br from-blue-600 to-purple-700' : 'bg-gradient-to-br from-gray-600 to-gray-800'} text-white`}>
+    <Card className={`w-80 h-56 relative overflow-hidden ${isOwnCard ? 'bg-gradient-to-br from-blue-600 to-purple-700' : 'bg-gradient-to-br from-gray-600 to-gray-800'} text-white`}>
       <CardContent className="p-6 h-full flex flex-col justify-between">
         {/* Card Header */}
         <div className="flex justify-between items-start">
@@ -57,7 +60,7 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
         </div>
 
         {/* Card Footer */}
-        <div className="space-y-2">
+        <div className="space-y-3">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-xs opacity-80">Card Owner</p>
@@ -82,6 +85,13 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
               <p className="font-mono">{id}</p>
             </div>
           </div>
+          
+          {/* Google Wallet Actions */}
+          <GoogleWalletButton 
+            card={{ id, owner, balance }} 
+            variant="compact"
+            className="pt-1"
+          />
         </div>
 
         {/* Decorative circles */}

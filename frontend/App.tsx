@@ -1,9 +1,9 @@
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 // Internal Components
-import {  CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Header } from "@/components/Header";
 
-
+import { TopBanner } from "@/components/TopBanner";
 import { CardManager } from "@/components/CardManager";
 
 function App() {

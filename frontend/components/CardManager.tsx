@@ -16,6 +16,7 @@ import { isRegistryInitialized } from "../view-functions/isRegistryInitialized";
 import { getTotalCards } from "../view-functions/getTotalCards";
 import { CreditCard, Plus, ArrowUpRight, ArrowDownLeft, Send, RefreshCw, CheckCircle } from "lucide-react";
 import { CardsDisplay } from "./CardsDisplay";
+import { GoogleWalletShowcase } from "./GoogleWalletShowcase";
 
 export function CardManager() {
   const { account, signAndSubmitTransaction } = useWallet();
@@ -493,6 +494,9 @@ export function CardManager() {
 
       {/* Cards Display Section */}
       <CardsDisplay />
+
+      {/* Google Wallet Integration Showcase */}
+      <GoogleWalletShowcase />
 
       {!account && (
         <Card className="border-yellow-200 bg-yellow-50">
