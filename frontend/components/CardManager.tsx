@@ -53,7 +53,6 @@ export function CardManager() {
             moduleAddress: MODULE_ADDRESS as `0x${string}`,
           });
           console.log("Total cards:", total);
-          setTotalCards(total);
         }
       } catch (error) {
         console.error("Error checking registry status:", error);
