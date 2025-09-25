@@ -254,7 +254,7 @@ export function CardManager() {
               <>
                 <CheckCircle className="h-4 w-4 text-green-500" />
                 <span className="text-green-600">
-                  Registry Active • {totalCards} cards created
+                  Registry Active 
                 </span>
               </>
             ) : (

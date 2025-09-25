@@ -66,9 +66,8 @@ export function CardsDisplay() {
     fetchAllCards();
   }, []);
 
-  // Separate user's cards from other cards
+  // Filter to show only user's cards
   const userCards = cards.filter(card => account && card.owner.toLowerCase() === account.address.toString().toLowerCase());
-  const otherCards = cards.filter(card => !account || card.owner.toLowerCase() !== account.address.toString().toLowerCase());
 
   return (
     <Card className="w-full">
@@ -80,7 +79,7 @@ export function CardsDisplay() {
               Virtual Cards
             </CardTitle>
             <CardDescription>
-              {cards.length === 0 ? "No cards created yet" : `${cards.length} card${cards.length === 1 ? '' : 's'} total`}
+              {userCards.length === 0 ? "You don't own any cards yet" : `${userCards.length} of your card${userCards.length === 1 ? '' : 's'}`}
             </CardDescription>
           </div>
           <Button
@@ -111,18 +110,18 @@ export function CardsDisplay() {
         {isLoading && cards.length === 0 ? (
           <div className="flex items-center justify-center py-12">
             <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
-            <span className="ml-2 text-muted-foreground">Loading cards...</span>
+            <span className="ml-2 text-muted-foreground">Loading your cards...</span>
           </div>
-        ) : cards.length === 0 ? (
+        ) : !account ? (
           <div className="text-center py-12">
             <CreditCard className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-            <p className="text-muted-foreground mb-2">No cards created yet</p>
-            <p className="text-sm text-muted-foreground">Create your first virtual card to get started!</p>
+            <p className="text-muted-foreground mb-2">Connect your wallet to view your cards</p>
+            <p className="text-sm text-muted-foreground">Your virtual cards will appear here once you connect!</p>
           </div>
         ) : (
           <div className="space-y-8">
-            {/* User's Cards */}
-            {userCards.length > 0 && (
+            {/* Only User's Cards */}
+            {userCards.length > 0 ? (
               <div>
                 <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
                   Your Cards ({userCards.length})
@@ -139,25 +138,11 @@ export function CardsDisplay() {
                   ))}
                 </div>
               </div>
-            )}
-
-            {/* Other Cards */}
-            {otherCards.length > 0 && (
-              <div>
-                <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-                  All Cards ({otherCards.length})
-                </h3>
-                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-                  {otherCards.map((card) => (
-                    <CreditCardDisplay
-                      key={card.id}
-                      id={card.id}
-                      owner={card.owner}
-                      balance={card.balance}
-                      isOwnCard={false}
-                    />
-                  ))}
-                </div>
+            ) : (
+              <div className="text-center py-12">
+                <CreditCard className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
+                <p className="text-muted-foreground mb-2">You don't own any cards yet</p>
+                <p className="text-sm text-muted-foreground">Create your first virtual card to get started!</p>
               </div>
             )}
           </div>
