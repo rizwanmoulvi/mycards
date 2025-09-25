@@ -30,7 +30,7 @@ export function CardManager() {
   const [cardBalance, setCardBalance] = useState<number | null>(null);
   const [balanceCardId, setBalanceCardId] = useState("");
   const [registryInitialized, setRegistryInitialized] = useState<boolean | null>(null);
-  const [totalCards, setTotalCards] = useState<number | null>(null);
+  
 
   // Check registry status on component mount
   useEffect(() => {
