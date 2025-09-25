@@ -1,7 +1,7 @@
 export class GoogleWalletService {
   private issuerId: string;
   private classId: string;
-  private websiteUrl: string = 'https://mycards.rizzmo.site';
+//   private websiteUrl: string = 'https://mycards.rizzmo.site';
   private serverUrl: string = 'http://localhost:3001';
   
   constructor() {

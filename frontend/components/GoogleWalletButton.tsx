@@ -27,7 +27,7 @@ export function GoogleWalletButton({ card, variant = 'full', className = '' }: G
     
     try {
       // Use the demo service to show proper explanation
-      const demoResult = await demoService.addToWalletDemo(card);
+    //   const demoResult = await demoService.addToWalletDemo(card);
       
       // Open the production-format URL (this will show the error you encountered)
       const walletUrl = demoService.generateProductionWalletUrl(card);
