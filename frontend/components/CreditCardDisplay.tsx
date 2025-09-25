@@ -36,7 +36,7 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
 
 
   return (
-    <Card className={`w-80 h-56 relative overflow-hidden ${isOwnCard ? 'bg-gradient-to-br from-blue-600 to-purple-700' : 'bg-gradient-to-br from-gray-600 to-gray-800'} text-white`}>
+    <Card className={`w-80 h-56 relative overflow-hidden ${isOwnCard ? 'bg-gradient-to-br from-gray-600 to-slate-700' : 'bg-gradient-to-br from-gray-600 to-gray-800'} text-white`}>
       <CardContent className="p-6 h-full flex flex-col justify-between">
         {/* Card Header */}
         <div className="flex justify-between items-start">
@@ -54,8 +54,13 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
 
         {/* Card Middle - Decorative Pattern */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-12 h-8 bg-white/20 rounded-lg flex items-center justify-center">
-            <div className="w-8 h-6 bg-white/30 rounded"></div>
+          <div className="w-12 h-8 flex items-center justify-center">
+            <div className="w-8 h-6  rounded"></div>
+               <GoogleWalletButton 
+                    card={{ id, owner, balance }} 
+                    variant="compact"
+                    className="pt-1"
+                />
           </div>
         </div>
 
@@ -85,13 +90,6 @@ export function CreditCardDisplay({ id, owner, balance, isOwnCard = false }: Cre
               <p className="font-mono">{id}</p>
             </div>
           </div>
-          
-          {/* Google Wallet Actions */}
-          <GoogleWalletButton 
-            card={{ id, owner, balance }} 
-            variant="compact"
-            className="pt-1"
-          />
         </div>
 
         {/* Decorative circles */}

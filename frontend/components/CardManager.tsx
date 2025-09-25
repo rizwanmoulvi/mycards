@@ -243,10 +243,10 @@ export function CardManager() {
       <div className="text-center space-y-2">
         <h1 className="text-3xl font-bold flex items-center justify-center gap-2">
           <CreditCard className="h-8 w-8" />
-          Card Manager
+          Dashboard
         </h1>
         <p className="text-muted-foreground">
-          Manage your virtual cards on the Aptos blockchain
+          Programable Virtual Crypto Cards on Aptos Blockchain
         </p>
         {registryInitialized !== null && (
           <div className="flex items-center justify-center gap-2 text-sm">

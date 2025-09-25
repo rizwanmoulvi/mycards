@@ -86,26 +86,17 @@ export function GoogleWalletButton({ card, variant = 'full', className = '' }: G
     return (
       <div className={`flex gap-2 ${className}`}>
         <Button
-          onClick={handleAddToWallet}
+          variant="outline"
           size="sm"
+          onClick={handleCopyWalletLink}
+          className="px-3 bg-white/20 border-white/30 text-white hover:bg-white/30 hover:text-white"
           disabled={isLoading}
-          className="bg-black hover:bg-gray-800 text-white px-3"
         >
           {isLoading ? (
             <Loader2 className="h-3 w-3 animate-spin" />
           ) : (
-            <Wallet className="h-3 w-3" />
+            <Copy className="h-3 w-3" />
           )}
-        </Button>
-        
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={handleCopyWalletLink}
-          className="px-3"
-          disabled={isLoading}
-        >
-          <Copy className="h-3 w-3" />
         </Button>
       </div>
     );
@@ -138,7 +129,7 @@ export function GoogleWalletButton({ card, variant = 'full', className = '' }: G
           className="px-4"
           disabled={isLoading}
         >
-          <Copy className="h-4 w-4 mr-2" />
+          <Copy className="h-4  w-4 mr-2" />
           Copy Link
         </Button>
       </div>
