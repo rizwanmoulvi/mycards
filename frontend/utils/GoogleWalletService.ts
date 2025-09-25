@@ -6,7 +6,7 @@ export class GoogleWalletService {
   
   constructor() {
     this.issuerId = '3388000000023014969';
-    this.classId = `${this.issuerId}.virtual_apt_card_class`;
+    this.classId = `${this.issuerId}.programmable-virtual-cards`;
   }
 
   // Initialize Google Wallet (called when component mounts)
